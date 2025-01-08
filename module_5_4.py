@@ -1,5 +1,4 @@
 class House:
-    __instance = None
     houses_history = []
 
     def __new__(cls, *args, **kwargs):
