@@ -5,12 +5,6 @@ class User:
         self.nickname = nickname
         self.password = password
         self.age = age
-    #
-    # def __eq__(self, other):
-    #     return self.nickname == other.nickname and self.password == other.password
-    #
-    # def __hash__(self):
-    #     return hash(self.password)
 
 
 class Video:
@@ -22,6 +16,7 @@ class Video:
 
 
 class UrTube:
+
     def __init__(self):
         self.users = []
         self.videos = []
@@ -32,7 +27,7 @@ class UrTube:
         for user in self.users:
             if user.nickname == nickname and user.password == hashed_password:
                 self.current_user = user
-                print(f"Вы вошли как {nickname}")
+                # print(f"Вы вошли как {nickname}")
                 return
         print("Неверный логин или пароль")
 
@@ -40,12 +35,12 @@ class UrTube:
         for user in self.users:
             if user.nickname == nickname:
                 print(f"Пользователь {nickname} уже существует")
-                self.log_in(nickname, password)
                 return
         new_user = User(nickname, password, age)
         self.users.append(new_user)
-        print(f"Пользователь {nickname} успешно зарегистрирован и вошел")
+        # print(f"Пользователь {nickname} успешно зарегистрирован и вошел")
         self.current_user = new_user
+        self.log_in(nickname, password)
 
     def log_out(self):
         self.current_user = None
@@ -105,7 +100,7 @@ ur.watch_video('Для чего девушкам парень программи
 
 # Проверка входа в другой аккаунт
 ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
-print(ur.current_user)
+print(ur.current_user.nickname)
 
 # Попытка воспроизведения несуществующего видео
 ur.watch_video('Лучший язык программирования 2024 года!')
