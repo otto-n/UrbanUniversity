@@ -1,6 +1,3 @@
-from itertools import count
-
-
 def personal_sum(numbers):
     result = incorrect_data = amount_ints = 0
     try:
