@@ -46,7 +46,6 @@ class Circle(Figure):
     sides_count = 1
     
     def __init__(self, new_color, *new_sides):
-        super().__init__() # наследуем все что есть у родителя при создании класса
         self.set_color(*new_color) # определяем цвет фигуры
         self.set_sides(*new_sides) # определяем размер стороны (окружности)
 
@@ -68,7 +67,6 @@ class Triangle(Figure):
     sides_count = 3
 
     def __init__(self, new_color, *new_sides):
-        super().__init__()
         self.set_color(*new_color)
         self.set_sides(*new_sides)
 
@@ -90,7 +88,7 @@ class Cube(Figure):
     sides_count = 12
 
     def __init__(self, new_color, *new_sides):
-        super().__init__()
+
         self.set_color(*new_color)
 
         if len(new_sides) != self.sides_count:
